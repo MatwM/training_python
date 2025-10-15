@@ -45,7 +45,7 @@ def main():
             lettres_trouvees.sort()
             # 3.2.2. Vérifier lettre
             if lettre in mot_cible:
-                print("Bien joué ! Une nouvelle lettre à été ajouté au mot.")
+                print("Bien joué ! Une nouvelle lettre a été ajoutée au mot.")
                 mot_joueur = recup_mot_joueur(mot_cible, lettres_trouvees)
             else:
                 print("Dommage...")
