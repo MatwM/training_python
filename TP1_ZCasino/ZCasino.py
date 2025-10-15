@@ -3,7 +3,7 @@ from random import randrange
 from math import ceil
 
 
-def choose_number():
+def choose_number() -> int:
     """Ask the player on which number he want to bet on. It should be between 0 and 49.
 
     Returns:
@@ -25,7 +25,7 @@ def choose_number():
     return number_placed
 
 
-def choose_bet(money):
+def choose_bet(money: int) -> int:
     """Ask the player how much he want want to bet. He can't be more than he has money.
 
     Args:

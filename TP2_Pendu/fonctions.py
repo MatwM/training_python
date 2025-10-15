@@ -1,5 +1,7 @@
-"""Ce fichier définit toutes les fonctions utiles pour le pendu.
-Utilise notamment les données du fichiers `donnees.py`"""
+"""
+Ce fichier définit toutes les fonctions utiles pour le pendu.
+Utilise notamment les données du fichiers `donnees.py`
+"""
 
 import os
 import pickle
@@ -8,7 +10,7 @@ from random import choice
 from donnees import NOM_FICHIER_SCORE, MOTS_POSSIBLES
 
 
-def recup_scores():
+def recup_scores() -> dict[str, int]:
     if os.path.exists(NOM_FICHIER_SCORE):
         with open(NOM_FICHIER_SCORE, "rb") as fichier_scores:
             depickler = pickle.Unpickler(fichier_scores)
@@ -18,13 +20,13 @@ def recup_scores():
     return scores
 
 
-def enreg_scores(scores):
+def enreg_scores(scores: dict[str, int]) -> None:
     with open(NOM_FICHIER_SCORE, "wb") as fichier_scores:
         depickler = pickle.Pickler(fichier_scores)
         depickler.dump(scores)
 
 
-def recup_pseudo():
+def recup_pseudo() -> str:
     pseudo = input(">> Entrez votre pseudo: ")
     if len(pseudo) > 10:
         print("Votre pseudo ne doit pas comporter plus de 10 caractères.")
@@ -32,7 +34,7 @@ def recup_pseudo():
     return pseudo
 
 
-def recup_lettre(lettres_trouvees):
+def recup_lettre(lettres_trouvees: list[str]) -> str:
     lettre = input(">> Entrez une lettre: ").lower()
     if len(lettre) > 1 or not lettre.isalpha():
         print("Veuillez ne saisir qu'une lettre, issue de l'alphabet")
@@ -46,11 +48,11 @@ def recup_lettre(lettres_trouvees):
     return lettre
 
 
-def choisir_mot():
+def choisir_mot() -> str:
     return choice(MOTS_POSSIBLES)
 
 
-def recup_mot_joueur(mot_cible, lettres_trouvees):
+def recup_mot_joueur(mot_cible: str, lettres_trouvees: list[str]):
     mot_joueur = ""
     for lettre_mot in mot_cible:
         if lettre_mot in lettres_trouvees:
