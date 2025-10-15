@@ -93,7 +93,7 @@ def main():
         else:
             print("You currently have $", money, ".")
             leave = input(">> Do you want to leave the casino ? (y/n) ")
-            if leave == "y" or exit == "Y":
+            if leave == "y" or leave == "Y":
                 print("Thank you for playing, bye !")
                 play = False
 
