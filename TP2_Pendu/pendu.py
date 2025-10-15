@@ -55,7 +55,7 @@ def main():
         # 3.2.3. Victoire ou défaite ?
         if mot_joueur == mot_cible:
             print(
-                f"Félicitation ! Vous avez trouvé le mot {mot_cible}"
+                f"Félicitation ! Vous avez trouvé le mot {mot_cible} "
                 "et il vous restait {chances_restantes} chances."
             )
             # 3.2.3.1. Mettre à jour le score si victoire
