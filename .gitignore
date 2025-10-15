@@ -1,0 +1,4 @@
+.venv
+.vscode
+**/__pycache__
+**/players_scores
